@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Masonry Gallery</title>
+    <style>
+        /* Base page styling */
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: #f4f4f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* 
+         * The Masonry Container
+         * column-count defines the number of vertical columns.
+         * column-gap defines the space between those columns.
+         */
+        .masonry-grid {
+            column-count: 3;
+            column-gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 
+         * The Masonry Items
+         * break-inside: avoid prevents the image/container from 
+         * being split in half across two different columns.
+         */
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 20px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .masonry-item:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Ensure images scale correctly within their container */
+        .masonry-item img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        /* Responsive breakpoints */
+        @media (max-width: 900px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .masonry-grid {
+                column-count: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="masonry-grid">
+        <!-- Using placeholder images with varying heights to demonstrate the masonry effect -->
+        <div class="masonry-item">
+            <img src="https://picsum.photos/400/600?random=1" alt="Gallery Photo 1">
+        </div>
+        <div class="masonry-item">
+            <img src="https://picsum.photos/400/400?random=2" alt="Gallery Photo 2">
+        </div>
+        <div class="masonry-item">
+            <img src="https://picsum.photos/400/800?random=3" alt="Gallery Photo 3">
+        </div>
+        <div class="masonry-item">
+            <img src="https://picsum.photos/400/500?random=4" alt="Gallery Photo 4">
+        </div>
+        <div class="masonry-item">
+            <img src="https://picsum.photos/400/700?random=5" alt="Gallery Photo 5">
+        </div>
+        <div class="masonry-item">
+            <img src="https://picsum.photos/400/450?random=6" alt="Gallery Photo 6">
+        </div>
+        <div class="masonry-item">
+            <img src="https://picsum.photos/400/650?random=7" alt="Gallery Photo 7">
+        </div>
+        <div class="masonry-item">
+            <img src="https://picsum.photos/400/550?random=8" alt="Gallery Photo 8">
+        </div>
+    </div>
+
+</body>
+</html>
